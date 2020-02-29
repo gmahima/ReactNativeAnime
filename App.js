@@ -5,6 +5,7 @@ import Home from './screens/Home'
 import Genre from './screens/Genre'
 import Audience from './screens/Audience'
 import {NavigationContainer} from '@react-navigation/native'
+import {Context, Provider} from './context'
 import {
   SafeAreaView,
   StyleSheet,
@@ -27,19 +28,26 @@ const {Navigator, Screen} = createMaterialTopTabNavigator();
 
 
 const App= () => {
+  console.log("from app")
   return (
+    
     <NavigationContainer>
-      <Navigator initialRouteName={Home}>
-        <Screen name='Home' component={Home}/>
-        <Screen name='Genre' component={Genre} />
-        <Screen name='Target_Audience' component={Audience} options={
-          {
-            title: 'Target Audience'
-          }
-        }/>
+      
+        <Navigator initialRouteName={Home}>
+        <Provider>
+          <Screen name='Home' component={Home}/>
+          <Screen name='Genre' component={Genre} />
+          <Screen name='Target_Audience' component={Audience} options={
+            {
+              title: 'Target Audience'
+            }
+          }/>
+          </Provider>
 
-      </Navigator>
+        </Navigator>
+      
     </NavigationContainer>
+    
   );
 };
 

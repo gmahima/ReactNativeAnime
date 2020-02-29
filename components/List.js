@@ -9,7 +9,8 @@ import {
   } from 'react-native';
   import Icon from 'react-native-vector-icons/Fontisto'
 
-  export default function List() {
+  export default function List({items}) {
+      console.log(items)
       return (
           <View>
               <Text>
