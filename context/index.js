@@ -1,22 +1,22 @@
 import React, {createContext, useState} from 'react'
 export const Context = createContext(null);
 
-export const Provider = () => {
+export const Provider = (props) => {
     const genre = [
-       { action: ['inuyasha', 'dbz', 'naruto', 'snk']},
-       {comedy : ['one punch man', 'wotakoi', 'gekkan shoujo nozaki kun']}
+       'action',
+       'comedy'
 
     ]
-    const targetAudience = [
-        {shounen: ['inuyasha', 'snk', 'naruto', 'death note']},
-        {seinen: ['rokuhoudou', 'barakamon', 'one punch man']}
+    const audience = [
+        'shounen', 'seinen'
     ]
     
     return(
         <Context.Provider value={{
-            genre, targetAudience
+            genre, audience
 
         }}>
+           { props.children}
         </Context.Provider>
         
         

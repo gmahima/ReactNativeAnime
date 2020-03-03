@@ -14,7 +14,7 @@ import {
       return (
           <View>
               <Text>
-                hi
+                {items[1]}
               </Text>
           </View>
       )

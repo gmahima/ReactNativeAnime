@@ -18,7 +18,7 @@ import {
               <Text>
                   Genre
               </Text>
-              {/* <List items={genre}></List> */}
+              <List items={genre}></List>
 
           </View>
       )

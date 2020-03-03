@@ -5,7 +5,7 @@ import Home from './screens/Home'
 import Genre from './screens/Genre'
 import Audience from './screens/Audience'
 import {NavigationContainer} from '@react-navigation/native'
-import {Context, Provider} from './context'
+import {Provider} from './context/index'
 import {
   SafeAreaView,
   StyleSheet,
@@ -23,6 +23,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
 const {Navigator, Screen} = createMaterialTopTabNavigator();
 
 
@@ -30,11 +31,11 @@ const {Navigator, Screen} = createMaterialTopTabNavigator();
 const App= () => {
   console.log("from app")
   return (
-    
+<Provider>
     <NavigationContainer>
       
         <Navigator initialRouteName={Home}>
-        <Provider>
+        
           <Screen name='Home' component={Home}/>
           <Screen name='Genre' component={Genre} />
           <Screen name='Target_Audience' component={Audience} options={
@@ -42,12 +43,13 @@ const App= () => {
               title: 'Target Audience'
             }
           }/>
-          </Provider>
+          
 
         </Navigator>
       
     </NavigationContainer>
-    
+    </Provider>
+  
   );
 };
 
