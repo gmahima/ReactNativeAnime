@@ -14,12 +14,8 @@ import {
       const c = useContext(Context)
       const genre = c.genre;
       return (
-          <View>
-              <Text>
-                  Genre
-              </Text>
+
               <List items={genre}></List>
 
-          </View>
       )
   }

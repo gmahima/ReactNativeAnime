@@ -5,18 +5,34 @@ import {
     View,
     Text,
     FlatList,
-    TouchableOpacity
+    TouchableOpacity,
+    Button
   } from 'react-native';
   import Icon from 'react-native-vector-icons/Fontisto'
+  import {NavigationContainer} from '@react-navigation/native'
+  import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs'
 
+  const {Navigator, Screen} = createMaterialTopTabNavigator();
   export default function List({items}) {
+      
       console.log(items)
       return (
           <View>
-              <Text>
-                {items[1]}
-              </Text>
+              {
+                  items.map(x => (
+                      <Button title={x}>
+                      </Button>
+                  ))
+              }
           </View>
       )
+    //     <View>
+    //     {items.forEach((x) => (
+    //         <Text> 
+    //             x
+    //         </Text>
+    //   ))}
+    //     </View>
+    //   )
   }
 
